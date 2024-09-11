@@ -8,7 +8,6 @@ import * as Yup from 'yup';
 
 const contactSchemaValidation=Yup.object().shape(
    { name:Yup.string().required("Name is required"),
-    Email:Yup.string().email("invalid Email").required("email is also required"),
     phoneNo:Yup.string().required("required number"),
 }
 )
