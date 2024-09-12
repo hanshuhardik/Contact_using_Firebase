@@ -26,7 +26,10 @@ const App = () => {
               id:doc.id,...doc.data()
           }
         });
-       setContacts(contactLists);
+       const filterdContacts=contactLists.filter(contact=>
+          contact.username.includes(""))
+  
+          setContacts(filterdContacts);
       });
       
       }catch(error){
