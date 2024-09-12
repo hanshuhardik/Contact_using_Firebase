@@ -27,7 +27,7 @@ const App = () => {
           }
         });
        const filterdContacts=contactLists.filter(contact=>
-          contact.username.includes(""))
+          contact.username==="")
   
           setContacts(filterdContacts);
       });
