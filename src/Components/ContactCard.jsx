@@ -14,7 +14,7 @@ const ContactCard = ({contact}) => {
 const DeleteContact=async(id)=>{
     try{
 
-        await deleteDoc(doc(db,"contacts",id));
+        await deleteDoc(doc(db,"contact",id));
         toast.success("contact deleted Successfully");
     }catch(error){
 console.log(error);
