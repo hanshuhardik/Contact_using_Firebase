@@ -19,17 +19,16 @@ const App = () => {
   useEffect(()=>{
     const getContacts=async ()=>{
       try{
-      const contactsRef=collection(db,"contacts");
+      const contactsRef=collection(db,"contact");
       onSnapshot(contactsRef,(snapshot)=>{
         const contactLists=snapshot.docs.map((doc)=>{
           return {
               id:doc.id,...doc.data()
           }
         });
-       const filterdContacts=contactLists.filter(contact=>
-          contact.username==="")
+       
   
-          setContacts(filterdContacts);
+          setContacts(contactLists);
       });
       
       }catch(error){
@@ -41,7 +40,7 @@ const App = () => {
  
   const filterContacts=(event)=>{
     const value=event.target.value;
-    const contactsRef=collection(db,"contacts");
+    const contactsRef=collection(db,"contact");
       onSnapshot(contactsRef,(snapshot)=>{
         const contactLists=snapshot.docs.map((doc)=>{
           return {
